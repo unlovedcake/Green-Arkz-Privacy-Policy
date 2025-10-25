@@ -51,7 +51,7 @@
 
   <main class="max-w-4xl mx-auto px-6 py-12 space-y-8 fade-in">
     <h2 class="text-3xl font-semibold mb-4 text-green-700">Privacy Policy</h2>
-    <p class="text-gray-600 mb-8">Effective Date: <span class="font-medium">[Insert Date]</span></p>
+    <p class="text-gray-600 mb-8">Effective Date: <span  id="effective-date" class="font-medium"></span></p>
 
     <section class="space-y-8">
       <div class="fade-in">
@@ -137,6 +137,17 @@
   </footer>
 
   <script>
+
+    
+  const today = new Date();
+
+  // Format it (e.g., October 25, 2025)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = today.toLocaleDateString('en-US', options);
+
+  // Insert into the span
+  document.getElementById('effective-date').textContent = formattedDate;
+    
     document.getElementById("year").textContent = new Date().getFullYear();
 
     window.addEventListener("scroll", () => {
